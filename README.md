@@ -15,10 +15,9 @@
 ## :pushpin: Guide
 
 <div align="center">
-
-[![guide video](https://github.com/TEAM_Coprime/WhatIsYourName/blob/master/intro.jpg)](https://)
-
-<br>
+<a href="https://youtu.be/S7l_Xt5xCM8" target = "blank" alt="Guide Video">
+<img src="https://github.com/coprime30/WhatIsYourName/blob/master/intro.jpg"/>
+</a>
 </div>
 
 
@@ -27,6 +26,7 @@
 - **language** <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>  <br>
 - **back-end** <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/></a>  <img src="https://img.shields.io/badge/PyCharm-000000?style=flat-square&logo=PyCharm&logoColor=white"/></a><br>
 - **modeling** <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=TensorFlow&logoColor=white"/></a>  <img src="https://img.shields.io/badge/Google-Colab-F9AB00?style=flat-square&logo=Google-Colab&logoColor=white"/></a>
+- **DataSet** : [AI-Hub/Vision/상품이미지](https://aihub.or.kr/aidata/34145), 별도 구축 데이터
 - **etc** : gTTS, Google Computer Vision
 
 
