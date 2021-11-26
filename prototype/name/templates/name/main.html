@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="base" style="cursor: pointer; width: 100vw; height: 100vh;" onclick="location.href={% url 'name:upload' %}">
+    너의 이름은
+    <p>
+        <audio id="audio" src="{{ tts_intro }}">
+        </audio>
+    </p>
+</div>
+<script>
+    // 웹페이지가 로딩되면 자동으로 오디오 재생
+    window.onload = function() {
+        document.getElementById('audio').play();
+    }
+</script>
+{% endblock %}

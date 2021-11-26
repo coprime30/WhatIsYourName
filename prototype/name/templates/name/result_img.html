@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <div id="top">
+        {% if uploaded_file_url %}
+            <i id="img" style="cursor: pointer;">
+                <img src="{{ uploaded_file_url }}">
+            </i>
+            <audio id="audio" src="{{ tts }}"></audio>
+{#            <audio id="audio" src="{{ tts }}" onended="nextPlay();"></audio>#}
+        {% endif %}
+        <span style="font-size: 8rem;">{{ result_name }}</span>
+    </div>
+    <a class="bottom" style="color: black; text-decoration-line: None;"
+       href="{% url 'name:result_text' file_name=uploaded_file_name %}">
+            <span class="material-icons" style="font-size: 20rem;">text_fields</span>
+    </a>
+    <audio id="img_info" src="{{ tts_img }}"></audio>
+</div>
+
+<script>
+    // 웹페이지가 로딩되면 자동으로 오디오 재생
+    window.onload = function() {
+        document.getElementById('audio').play();
+    }
+
+    // 상품명 다음 페이지 안내 오디오 재생
+    function nextPlay() {
+        document.getElementById('img_info').src
+        var media = document.getElementById('img_info');
+        media.play();
+    }
+
+    // 5초 뒤 페이지 안내 오디오 재생
+    var audio = document.getElementById('img_info');
+    setTimeout(function() {
+        audio.play();
+    }, 5000);
+
+
+    // 이미지 눌렀을 때 오디오 파일 재생
+    document.getElementById('top').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('audio').play();
+    });
+</script>
+
+{% endblock %}

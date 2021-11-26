@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="base" style="cursor: pointer; width: 100vw; height: 100vh;" onclick="location.href={% url 'name:upload' %}">
+    <span class="material-icons" style="font-size: 20rem;">error_outline</span>
+   <p>
+        <audio id="audio" src="{{ tts_text_error }}">
+        </audio>
+    </p>
+</div>
+<script>
+    // 웹페이지가 로딩되면 자동으로 오디오 재생
+    window.onload = function() {
+        document.getElementById('audio').play();
+    }
+</script>
+{% endblock %}

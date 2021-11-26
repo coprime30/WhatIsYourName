@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <label class="base">
+        <form action="{% url 'name:result_img' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <span class="material-icons-round" style="font-size: 20rem;">touch_app</span>
+                <input type="file" id="input_img" name="img_uploaded" accept="image/*" style="display:none"
+                       onchange="setThumbnail(event);">
+                <div id="image_container">
+                    <button type="submit" style="background: None; border: None;">
+                        <img id="img_preview" style="cursor: pointer;">
+                    </button>
+                </div>
+            <audio id="audio" src="{{ tts_upload }}"></audio>
+        </form>
+    </label>
+</div>
+
+<script>
+    // 웹페이지가 로딩되면 자동으로 오디오 재생
+    window.onload = function() {
+        document.getElementById('audio').play();
+    }
+
+    // 이미지 미리보기
+    function setThumbnail(event) {
+        if (event.target.files && event.target.files[0]){
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var img = document.getElementById("img_preview");
+                img.setAttribute("src", event.target.result);
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    }
+
+    // 사진 올리면 오디오 재생..을 하고 싶다
+    //window.addEventListener('unload', function () {
+        //document.getElementById('audio').play();
+    //})
+0
+</script>
+{% endblock %}
